@@ -19,8 +19,10 @@ app.get('/launchx', (req, res) => {
 // Regresando un objeto
 // localhost:3000/explorersInNode
 app.get("/explorersInNode", (req, res) => {
-    const explorer = {name: "Eplorer", msg: "Hello"}
-    res.send(explorer)
+    const explorer1 = {name: "Eplorer1", msg: "Hello"}
+    const explorer2 = {name: "Eplorer2", msg: "Hello"}
+    const explorer3 = {name: "Eplorer3", msg: "Hello"}
+    res.send([explorer1, explorer2, explorer3])
 })
 
 // Query Params: Recibir parámetros por la url
