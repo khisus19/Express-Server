@@ -6,8 +6,7 @@ app.use(express.json()) // Indicamos que usaremos JSON
 // Puerto en que vamos a ver nuestra app: localhost:3000
 const port = 3000
 
-// HTTP Methods
-// Esto es un end point
+// HTTP Methods -Esto es un end point
 app.get('/v1/explorers', (req, res) => {
     console.log(`Api Explorers GET ALL request ${new Date()}`)
     const explorer1 = {id: 1, name: "Explorer1"}
@@ -21,10 +20,16 @@ app.get('/v1/explorers', (req, res) => {
 
 app.get('/v1/explorers/:id', (req, res) => {
     console.log(`Api Explorers GET request ${new Date()}`)
-    
     const explorer1 = {id: 1, name: "Explorer1"}
     res.status(200).json(explorer1)
 })
+
+app.post('/v1/explorers', (req, res) => {
+    console.log(`Api Explorers POST request ${new Date()}`)
+    const requestBody = req.body // Parámetros de un cliente
+    res.status(201).json({message: "Created"})
+})
+
 // Con esto inicializamos esta app
 app.listen(port, () => {
  console.log(`Example app listening on port ${port}`)
